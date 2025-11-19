@@ -36,11 +36,9 @@ graph TD
     User((User)) -->|Search Postcode| API[Firebase Cloud Function]
     API -->|Instantiate| Adapter[CouncilAdapter Interface]
     
-    subgraph "The Adapter Layer"
-        Adapter -->|Implements| WS[WhitespaceAdapter]
-        WS -->|Validates with| Zod[Zod Schema]
-        WS -->|Scrapes| Ext[External Council Site]
-    end
+    Adapter -->|Implements| WS[WhitespaceAdapter]
+    WS -->|Validates with| Zod[Zod Schema]
+    WS -->|Scrapes| Ext[External Council Site]
     
     Zod --x|Validation Failed| Error[Graceful Error Handler]
     Zod -->|Success| Firestore[(Firestore DB)]
