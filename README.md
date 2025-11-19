@@ -106,8 +106,8 @@ The backend runs several automated processes to ensure data accuracy:
 * If the structure has changed (failing Zod validation), it alerts the admin before users notice.
 
 ## Future Roadmap
-[ ] Multi-Council Support: Leverage the CouncilAdapter interface to onboard neighboring councils.
+* Multi-Council Support: Leverage the CouncilAdapter interface to onboard neighboring councils.
 
-[ ] E2E Testing: Expand current unit tests to include full Playwright flows for the critical subscription path.
+* E2E Testing: Expand current unit tests to include full Playwright flows for the critical subscription path.
 
-[ ] SMS Integration: Implement Twilio fallback for users without smartphone data.
+* SMS Integration: Implement Twilio fallback for users without smartphone data.
