@@ -71,8 +71,9 @@ Perceived performance is managed during the 1-3 second scraping delay.
 Solution: Custom CSS Skeleton Loaders are injected immediately upon user interaction.
 Outcome: Reduces bounce rates by providing instant visual feedback that the system is "working," rather than a frozen UI.
 
-## Tech Stack
-Frontend
+# Tech Stack
+
+##Frontend
 
 Core: Vanilla JavaScript (ES Modules)
 
