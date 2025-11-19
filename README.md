@@ -47,29 +47,25 @@ graph TD
     style Adapter fill:#bbf,stroke:#333,stroke-width:2px
 ```
 ## Engineering Highlights
-1. Resilient Data Pipeline (Runtime Validation)
-External websites frequently change their DOM structure, which breaks traditional scrapers.
 
-Solution: Implemented Zod schemas to enforce strict runtime validation on all scraped data.
-Outcome: If the council website changes its date format or table structure, the system throws a precise ScraperValidationFailed error rather than propagating corrupt data to the user's calendar.
+### 1. Resilient Data Pipeline (Runtime Validation)
+* **The Challenge:** External websites frequently change their DOM structure, which breaks traditional scrapers.
+* **The Solution:** Implemented **Zod schemas** to enforce strict runtime validation on all scraped data.
+* **The Outcome:** If the council website changes its date format or table structure, the system throws a precise `ScraperValidationFailed` error rather than propagating corrupt data to the user's calendar.
 
-2. Adapter Pattern (Decoupling)
-To support future scalability across different regions, the scraping logic is completely decoupled from the core API.
+### 2. Adapter Pattern (Decoupling)
+* **The Challenge:** Supporting future scalability across different regions without tightly coupling code to one vendor.
+* **The Solution:** A `CouncilAdapter` interface defines the contract (`getAddresses`, `getSchedule`). Vendor-specific logic (e.g., for Whitespace, Bartec, or Veolia) is isolated in its own class.
+* **The Outcome:** Adding a new council requires writing a new Adapter class, not refactoring the core engine.
 
-Solution: A CouncilAdapter interface defines the contract (getAddresses, getSchedule).
-Outcome: Vendor-specific logic (e.g., for Whitespace, Bartec, or Veolia) is isolated. Adding a new council requires writing a new Adapter class, not refactoring the engine.
+### 3. Zero-Bundle Frontend (Performance)
+* **The Reasoning:** See [ADR 001: Adoption of Vanilla JavaScript](./docs/adr/001-vanilla-js-frontend.md). The frontend is built without heavy frameworks like React or Vue.
+* **The Outcome:** Achieves **sub-100ms Time-to-Interactive (TTI)** on 3G mobile networks, critical for a utility app used transiently.
 
-3. Zero-Bundle Frontend (Performance)
-The frontend is built without heavy frameworks like React or Vue.
-
-Reasoning: See ADR 001: Adoption of Vanilla JavaScript.
-Outcome: Achieves sub-100ms Time-to-Interactive (TTI) on 3G mobile networks, critical for a utility app used transiently.
-
-4. Optimistic UX & Skeleton Loading
-Perceived performance is managed during the 1-3 second scraping delay.
-
-Solution: Custom CSS Skeleton Loaders are injected immediately upon user interaction.
-Outcome: Reduces bounce rates by providing instant visual feedback that the system is "working," rather than a frozen UI.
+### 4. Optimistic UX & Skeleton Loading
+* **The Challenge:** Managing perceived performance during the 1-3 second scraping delay.
+* **The Solution:** Custom CSS Skeleton Loaders are injected immediately upon user interaction.
+* **The Outcome:** Reduces bounce rates by providing instant visual feedback that the system is "working," rather than a frozen UI.
 
 # Tech Stack
 
