@@ -95,13 +95,15 @@ Validation: Zod
 ## Automation Logic
 The backend runs several automated processes to ensure data accuracy:
 
-getCalendar (Smart Caching) Generates .ics files on demand.
+### getCalendar (Smart Caching) 
 
-Stale-While-Revalidate: 
+Generates .ics files on demand.
+
+### Stale-While-Revalidate: 
 
 Checks the lastUpdated timestamp. If data is <24h old, it serves from Firestore cache. If >24h, it triggers a background re-scrape.
 
-scraperHealthCheck:
+### scraperHealthCheck:
 
 A daily cron job that runs a known valid query against the external council site.
 
