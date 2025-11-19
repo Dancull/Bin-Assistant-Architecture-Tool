@@ -73,7 +73,7 @@ Outcome: Reduces bounce rates by providing instant visual feedback that the syst
 
 # Tech Stack
 
-##Frontend
+## Frontend
 
 Core: Vanilla JavaScript (ES Modules)
 
