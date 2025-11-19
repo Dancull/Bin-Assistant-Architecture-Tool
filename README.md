@@ -1,10 +1,10 @@
 # Bin Day Assistant
 
- **Commercial Project / Proprietary Source Code**
+ **Production-Grade Utility / Proprietary Source Code**
 
 This repository hosts the **technical documentation and architectural overview** for the Bin Day Assistant application.
 
-The source code (Node.js Backend, Zod Schemas, Scraper Adapters) is currently **Private** as this application is a commercial SaaS product.
+The source code (Node.js Backend, Zod Schemas, Scraper Adapters) is currently **Private** as this application is a Production-Grade Utility SaaS product.
 >
 >However, this repository demonstrates the engineering standards used, including:
 * **Architecture Decision Records (ADRs)**
