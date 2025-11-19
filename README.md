@@ -16,7 +16,7 @@ The source code (Node.js Backend, Zod Schemas, Scraper Adapters) is currently **
 
 You can test the full application flow, including the Skeleton Loader and Calendar generation, using the **Demo Mode**.
 
-* **URL:** [https://bindayapp-2d5a6.web.app/]
+* **URL:** https://bindayapp-2d5a6.web.app/
 * **How to test:** Click the **"Try Demo Mode"** link under the search bar (or search for postcode `DEMO`).
 
 ---
@@ -75,39 +75,39 @@ Outcome: Reduces bounce rates by providing instant visual feedback that the syst
 
 ## Frontend
 
-Core: Vanilla JavaScript (ES Modules)
+* Core: Vanilla JavaScript (ES Modules)
 
-Styling: Pico.css (Semantic HTML-first framework)
+* Styling: Pico.css (Semantic HTML-first framework)
 
-Build Tool: Vite
+* Build Tool: Vite
 
-PWA: Service Worker for offline capabilities + Web Push Notifications
+* PWA: Service Worker for offline capabilities + Web Push Notifications
 
 ## Backend (Serverless)
-Platform: Firebase Cloud Functions (Node.js 20)
+* Platform: Firebase Cloud Functions (Node.js 20)
 
-Database: Cloud Firestore (NoSQL)
+* Database: Cloud Firestore (NoSQL)
 
-Security: Firebase App Check (ReCAPTCHA v3)
+* Security: Firebase App Check (ReCAPTCHA v3)
 
-Validation: Zod
+* Validation: Zod
 
 ## Automation Logic
 The backend runs several automated processes to ensure data accuracy:
 
 ### getCalendar (Smart Caching) 
 
-Generates .ics files on demand.
+* Generates .ics files on demand.
 
 ### Stale-While-Revalidate: 
 
-Checks the lastUpdated timestamp. If data is <24h old, it serves from Firestore cache. If >24h, it triggers a background re-scrape.
+* Checks the lastUpdated timestamp. If data is <24h old, it serves from Firestore cache. If >24h, it triggers a background re-scrape.
 
 ### scraperHealthCheck:
 
-A daily cron job that runs a known valid query against the external council site.
+* A daily cron job that runs a known valid query against the external council site.
 
-If the structure has changed (failing Zod validation), it alerts the admin before users notice.
+* If the structure has changed (failing Zod validation), it alerts the admin before users notice.
 
 ## Future Roadmap
 [ ] Multi-Council Support: Leverage the CouncilAdapter interface to onboard neighboring councils.
