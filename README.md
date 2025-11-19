@@ -111,3 +111,11 @@ The backend runs several automated processes to ensure data accuracy:
 * E2E Testing: Expand current unit tests to include full Playwright flows for the critical subscription path.
 
 * SMS Integration: Implement Twilio fallback for users without smartphone data.
+
+##  Disclaimer & Attribution
+
+This application is an unofficial utility designed to assist residents. It is not affiliated with, endorsed by, or connected to the local Council or Whitespace Work Software.
+
+* **Data Source:** All collection schedule data is parsed directly from the public council portal.
+* **Data Ownership:** All schedule data remains the property of the respective council.
+* **Usage:** This tool is intended for personal scheduling and accessibility purposes only.
