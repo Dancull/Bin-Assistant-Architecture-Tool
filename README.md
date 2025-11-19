@@ -75,24 +75,36 @@ Outcome: Reduces bounce rates by providing instant visual feedback that the syst
 
 ## Tech Stack
 Frontend
+
 Core: Vanilla JavaScript (ES Modules)
+
 Styling: Pico.css (Semantic HTML-first framework)
+
 Build Tool: Vite
+
 PWA: Service Worker for offline capabilities + Web Push Notifications
 
 ## Backend (Serverless)
 Platform: Firebase Cloud Functions (Node.js 20)
+
 Database: Cloud Firestore (NoSQL)
+
 Security: Firebase App Check (ReCAPTCHA v3)
+
 Validation: Zod
 
 ## Automation Logic
 The backend runs several automated processes to ensure data accuracy:
 getCalendar (Smart Caching)
+
 Generates .ics files on demand.
+
 Stale-While-Revalidate: Checks the lastUpdated timestamp. If data is <24h old, it serves from Firestore cache. If >24h, it triggers a background re-scrape.
+
 scraperHealthCheck
+
 A daily cron job that runs a known valid query against the external council site.
+
 If the structure has changed (failing Zod validation), it alerts the admin before users notice.
 
 ## Future Roadmap
