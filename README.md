@@ -16,7 +16,7 @@ The source code (Node.js Backend, Zod Schemas, Scraper Adapters) is currently **
 
 You can test the full application flow, including the Skeleton Loader and Calendar generation, using the **Demo Mode**.
 
-* **URL:** [[https://bindayapp-2d5a6.web.app/]](https://BinSync.web.app)
+* **URL:** https://binsync.web.app
 * **How to test:** Click the **"Try Demo Mode"** link under the search bar (or search for postcode `DEMO`).
 
 ---
